@@ -2,7 +2,6 @@ package utils;
 
 
 public class TestData {
-    public static final String USERNAME = "halvorson";
-    public static final String PASSWORD = "pzKdwI3u*fQp";
-//    public static final String BOOK_ISBN = "9781449325862";
+    public static final String USERNAME = System.getProperty("username", "halvorson");
+    public static final String PASSWORD = System.getProperty("password", "pzKdwI3u*fQp");
 }
