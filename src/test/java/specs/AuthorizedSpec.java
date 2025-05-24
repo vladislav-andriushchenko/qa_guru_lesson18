@@ -18,11 +18,4 @@ public class AuthorizedSpec {
             .contentType(JSON)
             .baseUri("https://demoqa.com")
             .header("Authorization", "Bearer " + getWebDriver().manage().getCookieNamed("token").getValue());
-
-    public static ResponseSpecification getAuthResponseWithStatusCode(int statusCode) {
-        return new ResponseSpecBuilder()
-                .log(ALL)
-                .expectStatusCode(statusCode)
-                .build();
-    }
 }

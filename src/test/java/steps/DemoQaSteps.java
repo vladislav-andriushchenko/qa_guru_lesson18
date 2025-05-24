@@ -7,7 +7,6 @@ import utils.TestData;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static io.restassured.RestAssured.given;
-import static specs.AuthorizedSpec.getAuthResponseWithStatusCode;
 import static specs.AuthorizedSpec.requestAuthSpec;
 import static specs.BaseSpec.getResponseWithStatusCode;
 import static specs.BaseSpec.requestSpec;
@@ -101,7 +100,7 @@ public class DemoQaSteps {
                 .when()
                 .get(USER_URL + "/" + userId)
                 .then()
-                .spec(getAuthResponseWithStatusCode(statusCode))
+                .spec(getResponseWithStatusCode(statusCode))
                 .extract()
                 .as(UserResponseModel.class);
     }
@@ -149,7 +148,7 @@ public class DemoQaSteps {
                 .when()
                 .post(BOOKS_URL)
                 .then()
-                .spec(getAuthResponseWithStatusCode(statusCode))
+                .spec(getResponseWithStatusCode(statusCode))
                 .extract()
                 .response();
     }
@@ -188,7 +187,7 @@ public class DemoQaSteps {
                 .when()
                 .delete(BOOKS_URL)
                 .then()
-                .spec(getAuthResponseWithStatusCode(statusCode))
+                .spec(getResponseWithStatusCode(statusCode))
                 .extract()
                 .response();
     }
@@ -213,7 +212,7 @@ public class DemoQaSteps {
                 .when()
                 .delete(BOOK_URL)
                 .then()
-                .spec(getAuthResponseWithStatusCode(statusCode))
+                .spec(getResponseWithStatusCode(statusCode))
                 .extract()
                 .response();
     }
