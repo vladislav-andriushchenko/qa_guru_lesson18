@@ -1,14 +1,12 @@
 package utils;
 
 
+import com.github.javafaker.Faker;
 import io.restassured.path.json.JsonPath;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
-import java.util.List;
-
-import com.github.javafaker.Faker;
 
 
 public class ResourceUtils {

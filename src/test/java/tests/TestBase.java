@@ -17,15 +17,11 @@ public class TestBase {
 
     @BeforeAll
     public static void setup() {
-        String browser = System.getProperty("browser", "chrome");
-        String browserVersion = System.getProperty("browserVersion", "128.0");
-        String browserSize = System.getProperty("browserSize", "1920x1080");
-
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         Configuration.baseUrl = System.getProperty("baseUrl", "https://demoqa.com");
         Configuration.pageLoadStrategy = "eager";
-        Configuration.browser = browser;
-        Configuration.browserSize = browserSize;
+        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserVersion = System.getProperty("browserVersion", "128.0");
 
         boolean isRemote = Boolean.parseBoolean(System.getProperty("remote", "true"));
         if (isRemote) {
@@ -36,8 +32,6 @@ public class TestBase {
                     "enableVNC", true,
                     "enableVideo", true
             ));
-
-            capabilities.setCapability("browserVersion", browserVersion);
 
             Configuration.browserCapabilities = capabilities;
         }

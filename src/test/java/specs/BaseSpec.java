@@ -17,10 +17,6 @@ public class BaseSpec {
             .contentType(JSON)
             .baseUri("https://demoqa.com");
 
-    public static ResponseSpecification responseSpec = new ResponseSpecBuilder()
-            .log(ALL)
-            .build();
-
     public static ResponseSpecification getResponseWithStatusCode(int statusCode) {
         return new ResponseSpecBuilder()
                 .log(ALL)

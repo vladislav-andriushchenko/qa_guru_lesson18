@@ -19,10 +19,6 @@ public class AuthorizedSpec {
             .baseUri("https://demoqa.com")
             .header("Authorization", "Bearer " + getWebDriver().manage().getCookieNamed("token").getValue());
 
-    public static ResponseSpecification responseAuthSpec = new ResponseSpecBuilder()
-            .log(ALL)
-            .build();
-
     public static ResponseSpecification getAuthResponseWithStatusCode(int statusCode) {
         return new ResponseSpecBuilder()
                 .log(ALL)
